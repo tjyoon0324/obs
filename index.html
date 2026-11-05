@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Obsidian 열기</title>
+</head>
+<body style="font-family:system-ui,sans-serif;padding:24px">
+<p id="m">Obsidian으로 이동 중…</p>
+<script>
+var p = location.hash.slice(1);
+var m = document.getElementById("m");
+if (p) {
+  var u = "obsidian://open?vault=Obsidian%20Sync&file=" + p;
+  m.textContent = "Obsidian으로 이동 중… 안 열리면 ";
+  var a = document.createElement("a");
+  a.href = u;
+  a.textContent = "여기를 누르세요";
+  m.appendChild(a);
+  location.href = u;
+} else {
+  m.textContent = "노트 경로가 없습니다.";
+}
+</script>
+</body>
+</html>
